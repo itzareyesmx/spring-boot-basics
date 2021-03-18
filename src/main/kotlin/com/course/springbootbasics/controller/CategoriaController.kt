@@ -1,6 +1,6 @@
 package com.course.springbootbasics.controller
 
-import com.course.springbootbasics.dto.CategoriaDTO
+import com.course.springbootbasics.dto.CategoryDTO
 import com.course.springbootbasics.services.CategoriaService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -17,14 +17,14 @@ class CategoriaController(
   private val categoriaService: CategoriaService
 ) {
 
-  @PostMapping("/categorias")
-  fun postCategoria(@RequestBody categoriaDTO: CategoriaDTO): ResponseEntity<String> {
-    categoriaService.save(categoriaDTO)
+  @PostMapping("/categories")
+  fun postCategories(@RequestBody categoryDTO: CategoryDTO): ResponseEntity<String> {
+    categoriaService.save(categoryDTO)
     return ResponseEntity(HttpStatus.NO_CONTENT)
   }
 
-  @GetMapping("/categoria/{id}")
-  fun getCategoria(@PathVariable id: Int): ResponseEntity<CategoriaDTO> {
+  @GetMapping("/categories/{id}")
+  fun getCategoria(@PathVariable id: Int): ResponseEntity<CategoryDTO> {
     return ResponseEntity(categoriaService.find(id), HttpStatus.OK)
   }
 }

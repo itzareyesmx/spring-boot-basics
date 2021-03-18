@@ -1,8 +1,8 @@
 -- -----------------------------------------------------
--- Table "CATEGORIAS"
+-- Table "Categories"
 -- -----------------------------------------------------
-CREATE TABLE  CATEGORIAS (
-  "id_categoria" SERIAL NOT NULL,
-  "descripcion" VARCHAR(45) NOT NULL,
-  "estado" BOOLEAN NOT NULL,
-  PRIMARY KEY ("id_categoria"));
+CREATE TABLE  categories (
+  "id" SERIAL NOT NULL,
+  "description" VARCHAR(45) NOT NULL,
+  "state" BOOLEAN NOT NULL,
+  PRIMARY KEY ("id"));

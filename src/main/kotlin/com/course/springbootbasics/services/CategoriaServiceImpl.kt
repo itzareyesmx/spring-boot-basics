@@ -1,7 +1,7 @@
 package com.course.springbootbasics.services
 
-import com.course.springbootbasics.dto.CategoriaDTO
-import com.course.springbootbasics.entities.Categoria
+import com.course.springbootbasics.dto.CategoryDTO
+import com.course.springbootbasics.entities.Category
 import com.course.springbootbasics.repository.CategoriaRepository
 import org.springframework.stereotype.Service
 
@@ -10,15 +10,15 @@ class CategoriaServiceImpl(
   val categoriaRepository: CategoriaRepository
 ) : CategoriaService {
 
-  override fun save(categoriaDTO: CategoriaDTO){
-    val categoria = Categoria()
-    categoria.descripcion = categoriaDTO.descripcion
-    categoria.estado = categoriaDTO.estado
-    categoriaRepository.save(categoria)
+  override fun save(categoryDTO: CategoryDTO){
+    val category = Category()
+    category.description = categoryDTO.description
+    category.state = categoryDTO.state
+    categoriaRepository.save(category)
   }
 
-  override fun find(id: Int): CategoriaDTO {
+  override fun find(id: Int): CategoryDTO {
     val category = categoriaRepository.findById(id).get()
-    return CategoriaDTO(category.descripcion, category.estado)
+    return CategoryDTO(category.description, category.state)
   }
 }
