@@ -16,4 +16,9 @@ class CategoriaServiceImpl(
     categoria.estado = categoriaDTO.estado
     categoriaRepository.save(categoria)
   }
+
+  override fun find(id: Int): CategoriaDTO {
+    val category = categoriaRepository.findById(id).get()
+    return CategoriaDTO(category.descripcion, category.estado)
+  }
 }
