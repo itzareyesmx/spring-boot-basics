@@ -4,5 +4,5 @@ import com.course.springbootbasics.dto.CategoryDTO
 
 interface CategoriaService {
   fun save(categoryDTO: CategoryDTO)
-  fun find(id: Int) : CategoryDTO
+  fun find(id: Int): CategoryDTO
 }

@@ -10,7 +10,7 @@ class CategoriaServiceImpl(
   val categoriaRepository: CategoriaRepository
 ) : CategoriaService {
 
-  override fun save(categoryDTO: CategoryDTO){
+  override fun save(categoryDTO: CategoryDTO) {
     val category = Category()
     category.description = categoryDTO.description
     category.state = categoryDTO.state
