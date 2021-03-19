@@ -8,5 +8,8 @@ data class Category (
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   var id: Int? = null,
   var description: String? = null,
-  var state: Boolean? = null
+  var state: Boolean? = null,
+
+  @OneToMany(mappedBy = "category")
+  var products: List<Product> = emptyList()
 )

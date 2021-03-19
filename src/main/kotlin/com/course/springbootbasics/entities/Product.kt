@@ -10,20 +10,21 @@ import javax.persistence.ManyToOne
 import javax.persistence.Table
 
 @Entity
+@Table(name = "products")
 data class Product(
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private val id: Int? = null,
+  val id: Int? = null,
 
-  private val name: String,
+  val name: String,
 
-  private val code: String? = null,
+  val code: String? = null,
 
-  private val price: Double? = null,
+  val price: Double? = null,
 
-  private val quantity: Int? = null,
+  val quantity: Int? = null,
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "id_category")
-  private val category: Category? = null,
+  val category: Category? = null,
 )
