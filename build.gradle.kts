@@ -21,6 +21,7 @@ val springBootVersion = "2.2.6.RELEASE"
 val kotlinVersion = "1.3.72"
 val detektVersion = "1.0.0-RC16"
 
+
 dependencies {
 	//Kotlin
 	implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
@@ -39,6 +40,9 @@ dependencies {
 
 	// Detekt
 	detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+
+	//Auth
+	implementation("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
 }
 
 tasks.withType<KotlinCompile> {
